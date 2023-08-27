@@ -27,29 +27,41 @@ namespace Eclipse.Input
         }
         [SerializeField] protected Transform head;
         protected Controls controls;
+
+        [Command]
+        public void QueryManagerState()
+        {
+            print($" owned by this player: {IsOwner}, current enabled state: {enabled}");
+        }
+        public override void OnNetworkSpawn()
+        {
+            base.OnNetworkSpawn();
+            if (!IsOwner)
+            {
+                enabled = false;
+                GetComponentInChildren<Camera>().gameObject.SetActive(false);
+            }
+        }
         private void OnEnable()
         {
-            if (!IsOwner)
-                return;
-            controls = new();
-            controls.Enable();
-            GetComponentInChildren<Camera>().gameObject.SetActive(IsOwner);
+                controls = new();
+                controls.Enable();
             
         }
         private void OnDisable()
         {
-            if (!IsOwner)
-                return;
-            controls.Disable();
-            controls.Dispose();
+            if (IsOwner)
+            {
+                controls.Disable();
+                controls.Dispose();
+            }
         }
 
         private void Update()
         {
-            if (!IsOwner)
-                return;
+
             inMenu = QuantumConsole.Instance.transform.GetChild(0).gameObject.activeInHierarchy;
-            if (!inMenu)
+            if (IsOwner && !inMenu)
             {
                 moveInput = controls.WorldInput.Move.ReadValue<Vector2>();
                 lookInput = controls.WorldInput.Aim.ReadValue<Vector2>();
@@ -71,12 +83,8 @@ namespace Eclipse.Input
                  headAngle = Mathf.Clamp(headAngle, -89.5f, 89.5f);
                  head.transform.localEulerAngles = Vector3.right * headAngle;
              }
-             else
-             {
-                 head.transform.localEulerAngles = Vector3.zero;
-             }
              transform.Rotate(transform.up * lookSpeed * lookInput.x * Time.fixedDeltaTime);
-             transform.Translate(new Vector3(moveInput.x, 0, moveInput.y) * Time.fixedDeltaTime * moveSpeed, Space.Self);
+             transform.Translate(moveSpeed * Time.fixedDeltaTime * new Vector3(moveInput.x, 0, moveInput.y), Space.Self);
             
         }
     }
