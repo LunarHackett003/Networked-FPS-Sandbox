@@ -83,7 +83,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -440,7 +440,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 1
     NetworkTransport: {fileID: 7133539703117374424}
-    PlayerPrefab: {fileID: 4845531102032600011, guid: f7585e1b728dcfa4c89e8760f276ab8b,
+    PlayerPrefab: {fileID: 6144455684974404285, guid: f7585e1b728dcfa4c89e8760f276ab8b,
       type: 3}
     Prefabs:
       NetworkPrefabsLists:

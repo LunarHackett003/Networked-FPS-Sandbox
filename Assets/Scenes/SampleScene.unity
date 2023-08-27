@@ -257,7 +257,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55850
+  m_Name: pb_Mesh48442
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -422,7 +422,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55912
+  m_Name: pb_Mesh48518
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -3288,7 +3288,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38168
+  m_Name: pb_Mesh48126
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4165,7 +4165,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38108
+  m_Name: pb_Mesh48066
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4877,7 +4877,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55772
+  m_Name: pb_Mesh48368
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5042,7 +5042,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55586
+  m_Name: pb_Mesh48164
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5559,7 +5559,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55522
+  m_Name: pb_Mesh48112
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -5724,7 +5724,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh55550
+  m_Name: pb_Mesh48140
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -6243,26 +6243,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1359655681209795139, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359655681209795139, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359655681209795139, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 1359655681209795139, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 540
-      objectReference: {fileID: 0}
     - target: {fileID: 4642540530951089770, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
         type: 3}
       propertyPath: m_RootOrder
