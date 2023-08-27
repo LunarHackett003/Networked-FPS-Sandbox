@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NetworkUI : MonoBehaviour
 {
-    [SerializeField] protected Button clientButton, hostButton;
+    [SerializeField] protected Button clientButton, hostButton, disconnectButton;
     private void Awake()
     {
         if(clientButton)
@@ -20,6 +20,16 @@ public class NetworkUI : MonoBehaviour
         {
             NetworkManager.Singleton.StartHost();
         });
+        if (disconnectButton)
+            disconnectButton.onClick.AddListener(() => {
+                if (NetworkManager.Singleton.IsClient)
+                    NetworkManager.Singleton.DisconnectClient(NetworkManager.Singleton.LocalClientId, "Quit Server.");
+                else
+                {
+                    NetworkManager.Singleton.Shutdown();
+                    Debug.Log("Server closed by Host.");
+                }
+            });
     }
     
 }
