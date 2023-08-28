@@ -27,7 +27,10 @@ namespace Eclipse.Input
         }
         [SerializeField] protected Transform head;
         protected Controls controls;
-
+        public Controls QueryControls()
+        {
+            return controls;
+        }
         [Command]
         public void QueryManagerState()
         {
@@ -85,7 +88,12 @@ namespace Eclipse.Input
              }
              transform.Rotate(transform.up * lookSpeed * lookInput.x * Time.fixedDeltaTime);
              transform.Translate(moveSpeed * Time.fixedDeltaTime * new Vector3(moveInput.x, 0, moveInput.y), Space.Self);
-            
+        }
+
+        [ServerRpc]
+        private void ExampleServerRpc()
+        {
+
         }
     }
 }

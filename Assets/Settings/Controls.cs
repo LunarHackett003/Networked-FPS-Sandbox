@@ -46,6 +46,15 @@ namespace Eclipse.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""d86233e7-2014-4078-81a4-dafbd036c016"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -136,6 +145,28 @@ namespace Eclipse.Input
                     ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff47b96b-1f23-4802-bc39-3e12ae8268ee"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c30676b4-891d-48dd-9524-4727941bc887"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -174,6 +205,7 @@ namespace Eclipse.Input
             m_WorldInput = asset.FindActionMap("WorldInput", throwIfNotFound: true);
             m_WorldInput_Move = m_WorldInput.FindAction("Move", throwIfNotFound: true);
             m_WorldInput_Aim = m_WorldInput.FindAction("Aim", throwIfNotFound: true);
+            m_WorldInput_Fire = m_WorldInput.FindAction("Fire", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -237,12 +269,14 @@ namespace Eclipse.Input
         private List<IWorldInputActions> m_WorldInputActionsCallbackInterfaces = new List<IWorldInputActions>();
         private readonly InputAction m_WorldInput_Move;
         private readonly InputAction m_WorldInput_Aim;
+        private readonly InputAction m_WorldInput_Fire;
         public struct WorldInputActions
         {
             private @Controls m_Wrapper;
             public WorldInputActions(@Controls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_WorldInput_Move;
             public InputAction @Aim => m_Wrapper.m_WorldInput_Aim;
+            public InputAction @Fire => m_Wrapper.m_WorldInput_Fire;
             public InputActionMap Get() { return m_Wrapper.m_WorldInput; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -258,6 +292,9 @@ namespace Eclipse.Input
                 @Aim.started += instance.OnAim;
                 @Aim.performed += instance.OnAim;
                 @Aim.canceled += instance.OnAim;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
 
             private void UnregisterCallbacks(IWorldInputActions instance)
@@ -268,6 +305,9 @@ namespace Eclipse.Input
                 @Aim.started -= instance.OnAim;
                 @Aim.performed -= instance.OnAim;
                 @Aim.canceled -= instance.OnAim;
+                @Fire.started -= instance.OnFire;
+                @Fire.performed -= instance.OnFire;
+                @Fire.canceled -= instance.OnFire;
             }
 
             public void RemoveCallbacks(IWorldInputActions instance)
@@ -307,6 +347,7 @@ namespace Eclipse.Input
         {
             void OnMove(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
+            void OnFire(InputAction.CallbackContext context);
         }
     }
 }
