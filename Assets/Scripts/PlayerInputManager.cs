@@ -21,6 +21,8 @@ namespace Eclipse.Input
         public float moveSpeed = 2f;
         [Command]
         public float lookSpeed = 15f;
+        [Command]
+        public bool invertHeadRotation;
         public (Quaternion bodyRot, Quaternion localHead) CharacterRotation()
         {
             return (transform.rotation, head.localRotation);
@@ -82,7 +84,7 @@ namespace Eclipse.Input
 
              if (head)
              {
-                 headAngle += -lookInput.y * lookSpeed * Time.fixedDeltaTime;
+                 headAngle += -lookInput.y * lookSpeed * (invertHeadRotation? 1:-1) * Time.fixedDeltaTime;
                  headAngle = Mathf.Clamp(headAngle, -89.5f, 89.5f);
                  head.transform.localEulerAngles = Vector3.right * headAngle;
              }
