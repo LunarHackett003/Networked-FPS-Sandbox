@@ -6303,15 +6303,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5406437193651659108, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
+    - target: {fileID: 5543078374475125000, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
         type: 3}
-      propertyPath: m_Value
-      value: 1
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5543078374475125000, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000009775162
+      value: -0.000013947487
       objectReference: {fileID: 0}
     - target: {fileID: 5739115979198916030, guid: d1e5f39b3b84db94cb5a64c27fd10d83,
         type: 3}
