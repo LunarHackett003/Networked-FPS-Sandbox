@@ -73,6 +73,14 @@ namespace Eclipse.Networking.LobbyNetworking
             };
             //Currently, use anon sign-in.
             await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+            //Check if player is connected to any lobbies and disconnect. Connections should not persist after game closure.
+           // List<string> joinedLobbies = await Lobbies.Instance.GetJoinedLobbiesAsync();
+           // foreach (var item in joinedLobbies)
+           // {
+           //     await Lobbies.Instance.RemovePlayerAsync(item, AuthenticationService.Instance.PlayerId);
+           // }
+            
         }
 
         private float heartbeatTimer;
@@ -158,6 +166,7 @@ namespace Eclipse.Networking.LobbyNetworking
                 Player p = hostLobby.Players.Find(x => x.Id == AuthenticationService.Instance.PlayerId);
                 SetPlayerNameInLobby(p);
                 HostLobbyQuery();
+                LobbyListUI.instance.LobbyListOnJoin();
             }
             catch (LobbyServiceException e)
             {
@@ -193,6 +202,7 @@ namespace Eclipse.Networking.LobbyNetworking
                 hostingLobby = false;
                 hostedLobbyID = null;
                 hostLobby = null;
+                LobbyListUI.instance.LobbyListOnDisconnect();
                 }
             catch (LobbyServiceException e)
             {
@@ -235,8 +245,10 @@ namespace Eclipse.Networking.LobbyNetworking
                 clientLobbyID = clientLobby.Id;
                 
                 ClientLobbyQuery();
+                LobbyListUI.instance.LobbyListOnJoin();
+
             }
-            catch(LobbyServiceException e)
+            catch (LobbyServiceException e)
             {
                 Debug.LogException(e);
             }
@@ -254,8 +266,10 @@ namespace Eclipse.Networking.LobbyNetworking
                 Debug.Log("Joined lobby via code!");
                 clientInLobby = true;
                 clientLobbyID = clientLobby.Id;
+                LobbyListUI.instance.LobbyListOnJoin();
+
             }
-            catch(LobbyServiceException e)
+            catch (LobbyServiceException e)
             {
                 Debug.LogException(e);
             }

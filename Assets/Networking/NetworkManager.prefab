@@ -1038,8 +1038,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8022504967155780117}
   m_HandleRect: {fileID: 6415930418247736480}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.26666668
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2089,9 +2089,12 @@ MonoBehaviour:
   refreshButton: {fileID: 4684563796495976357}
   baseLobbyListing: {fileID: 4763376921962406170, guid: ac8be01b44577374abf23fc14954e0e9,
     type: 3}
+  basePlayerListing: {fileID: 4763376921962406170, guid: 2b4e33b44438cb64aa570aa100fa2b45,
+    type: 3}
   listingParent: {fileID: 5543078374475125000}
   newLobbyMenu: {fileID: 5023313626028814620}
   newLobbyCloseButton: {fileID: 8431099167628868725}
+  gameStartButton: {fileID: 0}
 --- !u!1 &5866962049107474088
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000014901161}
+  m_AnchoredPosition: {x: 0, y: 0.000022172928}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2345500374660991845
