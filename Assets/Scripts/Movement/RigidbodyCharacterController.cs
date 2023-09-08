@@ -133,6 +133,10 @@ namespace Eclipse.Gameplay
             {
                 GroundMovement();
             }
+            else
+            {
+                AirMovement();
+            }
             if (wallRunning)
             {
                 moveState = MoveState.WallRun;
@@ -172,6 +176,14 @@ namespace Eclipse.Gameplay
             moveDirection = (transform.rotation) * new Vector3(pim.moveInput.x, 0, pim.moveInput.y);
             Vector3 moveVector = (sprinting ? sprintForce.Value : walkForce.Value) * slopeMoveDirection;
             rb.AddForce(moveVector, ForceMode.Acceleration);
+        }
+        void AirMovement()
+        {
+            if (PauseMenu.instance.paused)
+                return;
+            moveDirection = (transform.rotation) * new Vector3(pim.moveInput.x, 0, pim.moveInput.y);
+            Vector3 moveVector = moveDirection * walkForce.Value;
+            rb.AddForce(moveVector);
         }
         void CameraRotation()
         {
