@@ -395,6 +395,7 @@ MonoBehaviour:
   crouchColliderCentreHeight: 0.7
   baseColliderCentreHeight: 1
   slideInitalForce: 20
+  onSlope: 0
   wallDirection: 0
   coolingWallDirection: 0
 --- !u!1 &850634521411645423
@@ -449,7 +450,6 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 90f807caf5e52914d8364e07a78c83c4, type: 2}
   - {fileID: 2100000, guid: 3bf4556808279ac458a014bc8a196c3f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
