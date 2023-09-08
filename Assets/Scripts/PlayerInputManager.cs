@@ -16,17 +16,7 @@ namespace Eclipse.Input
         public bool jumping;
         public bool fireInput;
         public Vector2 lookInput;
-        [SerializeField] protected float headAngle;
-        [Command]
-        public float moveSpeed = 2f;
-        [Command]
-        public float lookSpeed = 15f;
-        [Command]
-        public bool invertHeadRotation;
-        public (Quaternion bodyRot, Quaternion localHead) CharacterRotation()
-        {
-            return (transform.rotation, head.localRotation);
-        }
+
         [SerializeField] protected Transform head;
         protected Controls controls;
         public Controls QueryControls()
@@ -79,17 +69,7 @@ namespace Eclipse.Input
         }
         private void FixedUpdate()
         {
-            if (!IsOwner)
-                return;
 
-             if (head)
-             {
-                 headAngle += -lookInput.y * lookSpeed * (invertHeadRotation? 1:-1) * Time.fixedDeltaTime;
-                 headAngle = Mathf.Clamp(headAngle, -89.5f, 89.5f);
-                 head.transform.localEulerAngles = Vector3.right * headAngle;
-             }
-             transform.Rotate(transform.up * lookSpeed * lookInput.x * Time.fixedDeltaTime);
-             transform.Translate(moveSpeed * Time.fixedDeltaTime * new Vector3(moveInput.x, 0, moveInput.y), Space.Self);
         }
 
         [ServerRpc]

@@ -55,6 +55,51 @@ namespace Eclipse.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f36e67c-3ae1-4d7f-a5ee-fb5a1131d6c5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ReloadWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""4808a3c5-0a3b-4df6-bf1a-1161c416e188"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4064675e-3047-4cb2-ad37-cf44223bd7ae"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""a25484b3-6605-4239-a831-cbfe4589005b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""7fcf1867-d343-41a0-98e2-b53c7105673e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -167,6 +212,116 @@ namespace Eclipse.Input
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ddbe61a-51d5-43dd-853f-c9bb4d67efda"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1ba5db0-9f8d-429f-bf15-fe90b99f9ddd"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f9ad71e1-6afb-4fc8-a307-3102dcd97214"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""ReloadWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5fb6afc-2fd4-450e-ac61-53f9d32b20b8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ReloadWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e13ed866-9162-4387-9dbd-a1a2160290a5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""834665bf-1f99-4e71-b0c5-467eb7d92de7"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da17849f-2d27-449e-9ddd-d4af7c3048e1"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60c16d53-4d8f-451f-8bbc-c505f4e07087"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea0321f7-b075-4387-9970-8ac65b48a7ad"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MK"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee36eeea-3b83-4ee8-b83d-a97ae7378efc"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -206,6 +361,11 @@ namespace Eclipse.Input
             m_WorldInput_Move = m_WorldInput.FindAction("Move", throwIfNotFound: true);
             m_WorldInput_Aim = m_WorldInput.FindAction("Aim", throwIfNotFound: true);
             m_WorldInput_Fire = m_WorldInput.FindAction("Fire", throwIfNotFound: true);
+            m_WorldInput_Jump = m_WorldInput.FindAction("Jump", throwIfNotFound: true);
+            m_WorldInput_ReloadWeapon = m_WorldInput.FindAction("ReloadWeapon", throwIfNotFound: true);
+            m_WorldInput_Pause = m_WorldInput.FindAction("Pause", throwIfNotFound: true);
+            m_WorldInput_Crouch = m_WorldInput.FindAction("Crouch", throwIfNotFound: true);
+            m_WorldInput_Sprint = m_WorldInput.FindAction("Sprint", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -270,6 +430,11 @@ namespace Eclipse.Input
         private readonly InputAction m_WorldInput_Move;
         private readonly InputAction m_WorldInput_Aim;
         private readonly InputAction m_WorldInput_Fire;
+        private readonly InputAction m_WorldInput_Jump;
+        private readonly InputAction m_WorldInput_ReloadWeapon;
+        private readonly InputAction m_WorldInput_Pause;
+        private readonly InputAction m_WorldInput_Crouch;
+        private readonly InputAction m_WorldInput_Sprint;
         public struct WorldInputActions
         {
             private @Controls m_Wrapper;
@@ -277,6 +442,11 @@ namespace Eclipse.Input
             public InputAction @Move => m_Wrapper.m_WorldInput_Move;
             public InputAction @Aim => m_Wrapper.m_WorldInput_Aim;
             public InputAction @Fire => m_Wrapper.m_WorldInput_Fire;
+            public InputAction @Jump => m_Wrapper.m_WorldInput_Jump;
+            public InputAction @ReloadWeapon => m_Wrapper.m_WorldInput_ReloadWeapon;
+            public InputAction @Pause => m_Wrapper.m_WorldInput_Pause;
+            public InputAction @Crouch => m_Wrapper.m_WorldInput_Crouch;
+            public InputAction @Sprint => m_Wrapper.m_WorldInput_Sprint;
             public InputActionMap Get() { return m_Wrapper.m_WorldInput; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -295,6 +465,21 @@ namespace Eclipse.Input
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @ReloadWeapon.started += instance.OnReloadWeapon;
+                @ReloadWeapon.performed += instance.OnReloadWeapon;
+                @ReloadWeapon.canceled += instance.OnReloadWeapon;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
 
             private void UnregisterCallbacks(IWorldInputActions instance)
@@ -308,6 +493,21 @@ namespace Eclipse.Input
                 @Fire.started -= instance.OnFire;
                 @Fire.performed -= instance.OnFire;
                 @Fire.canceled -= instance.OnFire;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+                @ReloadWeapon.started -= instance.OnReloadWeapon;
+                @ReloadWeapon.performed -= instance.OnReloadWeapon;
+                @ReloadWeapon.canceled -= instance.OnReloadWeapon;
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
+                @Crouch.started -= instance.OnCrouch;
+                @Crouch.performed -= instance.OnCrouch;
+                @Crouch.canceled -= instance.OnCrouch;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
             }
 
             public void RemoveCallbacks(IWorldInputActions instance)
@@ -348,6 +548,11 @@ namespace Eclipse.Input
             void OnMove(InputAction.CallbackContext context);
             void OnAim(InputAction.CallbackContext context);
             void OnFire(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+            void OnReloadWeapon(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
+            void OnCrouch(InputAction.CallbackContext context);
+            void OnSprint(InputAction.CallbackContext context);
         }
     }
 }

@@ -54,8 +54,10 @@ namespace Eclipse.Networking.LobbyNetworking
         private Lobby clientLobby;
         bool clientInLobby = false;
         string clientLobbyID = null;
-        private async void Start()
-        {
+
+        [SerializeField] TMP_InputField playernameField;
+        private void Start()
+        { 
             if (Instance)
             {
                 Destroy(gameObject); return;
@@ -65,23 +67,37 @@ namespace Eclipse.Networking.LobbyNetworking
                 Instance = this;
             }
             playerName = $"Default Player{Random.Range(0, 9999999)}";
-            await UnityServices.InitializeAsync();
-
-            AuthenticationService.Instance.SignedIn += () =>
-            {
-                print($"Signed in with PlayerID {AuthenticationService.Instance.PlayerId}.");
-            };
-            //Currently, use anon sign-in.
-            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+          //  await UnityServices.InitializeAsync();
+          //
+          //  AuthenticationService.Instance.SignedIn += () =>
+          //  {
+          //      print($"Signed in with PlayerID {AuthenticationService.Instance.PlayerId}.");
+          //  };
+          //  //Currently, use anon sign-in.
+          //  await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
             //Check if player is connected to any lobbies and disconnect. Connections should not persist after game closure.
            // List<string> joinedLobbies = await Lobbies.Instance.GetJoinedLobbiesAsync();
            // foreach (var item in joinedLobbies)
            // {
            //     await Lobbies.Instance.RemovePlayerAsync(item, AuthenticationService.Instance.PlayerId);
-           // }
-            
+           // }  
         }
+
+        public void StartAuthentication()
+        {
+            Authenticate(playernameField.text);
+        }
+
+        public async void Authenticate(string playerName)
+        {
+            this.playerName = playerName;
+            InitializationOptions initOptions = new InitializationOptions();
+            initOptions.SetProfile(playerName); 
+
+            await UnityServices.InitializeAsync(initOptions);
+        }
+
 
         private float heartbeatTimer;
         private float lobbyPollTimer;
