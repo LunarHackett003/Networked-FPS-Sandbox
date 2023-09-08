@@ -44,6 +44,7 @@ namespace Eclipse.Gameplay
         public NetworkVariable<float> specialMoveDrag = new(0.1f);
         public NetworkVariable<float> jumpForce = new(5f);
         public NetworkVariable<float> regularMoveDrag = new(5f);
+        public NetworkVariable<float> airAcceleration = new(10f);
         public NetworkVariable<float> wallRunGravity = new(-0.9f), wallRunGravityCounterTime = new(4f);
         [SerializeField] bool hasDoubleJumped;
         public NetworkVariable<bool> canDoubleJump = new(false);
@@ -81,6 +82,7 @@ namespace Eclipse.Gameplay
             controls.WorldInput.Jump.performed += (InputAction.CallbackContext context) => { if (!PauseMenu.instance.paused) JumpCheck(); };
             controls.WorldInput.Sprint.performed += (InputAction.CallbackContext context) => { if (!PauseMenu.instance.paused) sprinting = true; crouched = false; };
             controls.WorldInput.Crouch.performed += (InputAction.CallbackContext context) => { if (!PauseMenu.instance.paused) ToggleCrouch(); };
+            controls.WorldInput.Pause.performed += (InputAction.CallbackContext context) => { PauseMenu.instance.TogglePauseMenu(!PauseMenu.instance.paused); };
 
             PauseMenu.instance.TogglePauseMenu(false);
         }
@@ -182,7 +184,7 @@ namespace Eclipse.Gameplay
             if (PauseMenu.instance.paused)
                 return;
             moveDirection = (transform.rotation) * new Vector3(pim.moveInput.x, 0, pim.moveInput.y);
-            Vector3 moveVector = moveDirection * walkForce.Value;
+            Vector3 moveVector = moveDirection * airAcceleration.Value;
             rb.AddForce(moveVector);
         }
         void CameraRotation()

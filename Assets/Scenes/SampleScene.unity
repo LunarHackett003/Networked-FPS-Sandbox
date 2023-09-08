@@ -29757,9 +29757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30da910363c8cf41b3c907076f281c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sv_moveForce: 2
-  sv_maxMoveSpeed: 5
-  sv_airAccel: 2
+  sv_walkForce: 50
+  sv_sprintForce: 75
+  sv_jumpForce: 300
+  sv_airAccel: 5
   sv_canWallRun: 0
   sv_canDoubleJump: 0
 --- !u!1 &1596438205
@@ -33211,7 +33212,7 @@ Transform:
   m_GameObject: {fileID: 1794759544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -91.6, z: 231}
-  m_LocalScale: {x: 1500, y: 20, z: 1500}
+  m_LocalScale: {x: 1500, y: 70, z: 1500}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

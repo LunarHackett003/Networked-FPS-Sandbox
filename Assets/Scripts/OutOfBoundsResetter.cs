@@ -5,10 +5,7 @@ using UnityEngine;
 public class OutOfBoundsResetter : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.attachedRigidbody)
-        {
-            transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
-        }
+    { 
+        other.attachedRigidbody.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
     }
 }
