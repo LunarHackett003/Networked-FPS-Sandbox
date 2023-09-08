@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Eclipse.Gameplay
 {
-    public class PauseMenu : NetworkBehaviour
+    public class PauseMenu : MonoBehaviour
     {
         public static PauseMenu instance;
         public TextMeshProUGUI joinCodeDisplay;
@@ -33,7 +33,7 @@ namespace Eclipse.Gameplay
 
             createGameButton.onClick.AddListener(() => { Networking.RelayNetworking.RelayManager.instance.CreateRelay(); });
             joinGameButton.onClick.AddListener(() => { Networking.RelayNetworking.RelayManager.instance.JoinRelayWithCode(joinCodeField.text); });
-            disconnectButton.onClick.AddListener(() => { Networking.RelayNetworking.RelayManager.instance.LeaveRelay(NetworkObject.OwnerClientId); });
+            disconnectButton.onClick.AddListener(() => { Networking.RelayNetworking.RelayManager.instance.LeaveRelay(NetworkManager.Singleton.LocalClientId); });
         }
 
         public void TogglePauseMenu(bool paused)

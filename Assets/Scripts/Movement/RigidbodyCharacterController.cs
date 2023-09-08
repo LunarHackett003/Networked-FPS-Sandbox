@@ -86,6 +86,9 @@ namespace Eclipse.Gameplay
 
             PauseMenu.instance.TogglePauseMenu(false);
         }
+        public override void OnNetworkDespawn()
+        {
+        }
         private void FixedUpdate()
         {
             
